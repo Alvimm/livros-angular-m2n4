@@ -20,6 +20,15 @@ export class LivroListaComponent implements OnInit {
     this.servLivros = servLivros
   }
 
+  excluir = (codigo: number)=>{
+    this.servLivros.excluir(codigo)
+    this.livros = this.servLivros.obterLivros()
+  }
+
+  obterNome = (codEditora: number)=>{
+    return this.servEditora.getNomeEditora(codEditora)
+  }
+
   ngOnInit():void {
     this.editoras = this.servEditora.getEditoras()
     this.livros = this.servLivros.obterLivros()
