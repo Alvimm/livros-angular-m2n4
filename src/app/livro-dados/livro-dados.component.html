@@ -1,1 +1,50 @@
-<p>livro-dados works!</p>
+<main class="container">
+  <h1 class="my-3">Dados do Livro</h1>
+  <form (submit)="incluir()" ngNativeValidate>
+    <div>
+      <label for="titulo" class="form-label">
+        Título
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="livro.titulo"
+      />
+    </div>
+    <div>
+      <label for="resumo" class="form-label mt-3">
+        Resumo
+      </label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="livro.resumo"
+      ></textarea>
+    </div>
+    <!-- <div>
+      <label for="codEditora" class="form-label mt-3">
+        Editora
+      </label>
+      <select class="form-select" value={codEditora} id="codEditora" onChange={tratarCombo}>
+        {opcoes.map(opcao =>(
+          <option key={opcao.value} value={opcao.value}>{opcao.text}</option>
+        ))}
+      </select>
+    </div>
+    <div>
+      <label for="autores" class="form-label mt-3">
+        Autores (1 por linha)
+      </label>
+      <textarea
+        class="form-control"
+        id="autores"
+        value={autores}
+        onChange={e => setAutores(e.target.value)}
+        required
+      ></textarea>
+    </div> -->
+
+    <button type="submit" class="btn btn-primary px-3 mt-3">
+      Salvar Dados
+    </button>
+  </form>
+  </main>
