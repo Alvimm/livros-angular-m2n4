@@ -5,7 +5,7 @@ export class Livro {
     public titulo: string = "",
     public resumo: string = "",
     public autores: string[] = [],
-    public codEditora: number = -1,
+    public codEditora: string = "",
   ) {
   }
 }

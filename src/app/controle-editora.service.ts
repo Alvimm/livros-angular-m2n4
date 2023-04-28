@@ -15,12 +15,14 @@ export class ControleEditoraService {
 
   constructor() { }
 
+  getEditoras(): Array<Editora>{
+    return this.editoras
+  }
+
   getNomeEditora(codEditora:number):string {
     const editora = this.editoras.filter(editora => editora.codEditora === codEditora)[0]
     return editora ? editora.nome : ''
   }
 
-  getEditoras(): Array<Editora>{
-    return this.editoras
-  }
+
 }

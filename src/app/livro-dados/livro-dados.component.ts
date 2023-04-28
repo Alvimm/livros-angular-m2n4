@@ -23,7 +23,6 @@ export class LivroDadosComponent implements OnInit {
     this.livro = new Livro()
   }
 
-
   incluir = () => {
     this.livro.autores = this.autoresForm.split('\n');
     this.servLivros.incluir(this.livro);

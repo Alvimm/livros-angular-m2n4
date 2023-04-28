@@ -10,23 +10,20 @@ import { ControleLivrosService } from '../controle-livros.service';
   styleUrls: ['./livro-lista.component.css']
 })
 export class LivroListaComponent implements OnInit {
-  editoras: Array<Editora> = []
-  livros: Array<Livro> = []
-  servEditora: ControleEditoraService
-  servLivros: ControleLivrosService
+  public editoras: Array<Editora> = []
+  public livros: Array<Livro> = []
 
-  constructor(servEditora: ControleEditoraService, servLivros: ControleLivrosService) {
-    this.servEditora = servEditora
-    this.servLivros = servLivros
-  }
+
+  constructor(private servEditora: ControleEditoraService, private servLivros: ControleLivrosService) {}
 
   excluir = (codigo: number)=>{
     this.servLivros.excluir(codigo)
     this.livros = this.servLivros.obterLivros()
   }
 
-  obterNome = (codEditora: number)=>{
-    return this.servEditora.getNomeEditora(codEditora)
+  obterNome = (codEditora: string):string=>{
+    const codNum = parseInt(codEditora)
+    return this.servEditora.getNomeEditora(codNum)
   }
 
   ngOnInit():void {
