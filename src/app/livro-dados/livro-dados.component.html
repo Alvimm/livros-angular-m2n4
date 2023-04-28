@@ -1,47 +1,55 @@
 <main class="container">
-  <h1 class="my-3">Dados do Livro</h1>
+  <h1 class="my-3">Cadastro do Livro</h1>
   <form (submit)="incluir()" ngNativeValidate>
-    <div>
+    <div class="form-group">
       <label for="titulo" class="form-label">
         Título
       </label>
       <input
+        id="titulo"
         type="text"
+        name="titulo"
         class="form-control"
         [(ngModel)]="livro.titulo"
+        required
       />
     </div>
-    <div>
+    <div class="form-group">
       <label for="resumo" class="form-label mt-3">
         Resumo
       </label>
       <textarea
+      id="resumo"
+      name="resumo"
         class="form-control"
         [(ngModel)]="livro.resumo"
+        required
       ></textarea>
     </div>
-    <!-- <div>
-      <label for="codEditora" class="form-label mt-3">
+    <div class="form-group">
+      <label for="editora" class="form-label mt-3">
         Editora
       </label>
-      <select class="form-select" value={codEditora} id="codEditora" onChange={tratarCombo}>
-        {opcoes.map(opcao =>(
-          <option key={opcao.value} value={opcao.value}>{opcao.text}</option>
-        ))}
+
+
+
+      <select class="form-select"  id="editora" name="editora" [(ngModel)]="livro.codEditora" required >
+        <option *ngFor="let editora of editoras" [value]="editora.codEditora">{{ editora.nome }}</option>
       </select>
+
+
     </div>
-    <div>
+    <div class="form-group">
       <label for="autores" class="form-label mt-3">
         Autores (1 por linha)
       </label>
       <textarea
         class="form-control"
         id="autores"
-        value={autores}
-        onChange={e => setAutores(e.target.value)}
-        required
+        name="autores"
+        [(ngModel)]="autoresForm"
       ></textarea>
-    </div> -->
+    </div>
 
     <button type="submit" class="btn btn-primary px-3 mt-3">
       Salvar Dados

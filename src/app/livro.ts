@@ -1,21 +1,11 @@
 export class Livro {
-  codigo: number;
-  codEditora: number;
-  titulo: string;
-  resumo: string;
-  autores: string[];
 
   constructor(
-    codigo: number,
-    codEditora: number,
-    titulo: string,
-    resumo: string,
-    autores: string[]
+    public codigo: number = -1,
+    public titulo: string = "",
+    public resumo: string = "",
+    public autores: string[] = [],
+    public codEditora: number = -1,
   ) {
-    this.codigo = codigo;
-    this.codEditora = codEditora;
-    this.titulo = titulo;
-    this.resumo = resumo;
-    this.autores = autores;
   }
 }

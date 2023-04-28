@@ -8,29 +8,30 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-livro-dados',
   templateUrl: './livro-dados.component.html',
-  styleUrls: ['./livro-dados.component.css']
+  styleUrls: ['./livro-dados.component.css'],
 })
 export class LivroDadosComponent implements OnInit {
-  livro:Livro
-  autoresForm: string = ''
-  editoras: Array<Editora> = []
-  servEditora: ControleEditoraService
-  servLivros: ControleLivrosService
+  public livro: Livro;
+  public autoresForm: string = '';
+  public editoras: Array<Editora> = [];
 
-  constructor(livro:Livro, servEditora: ControleEditoraService, servLivros: ControleLivrosService, private router: Router) {
-    this.livro = livro
-    this.servEditora = servEditora
-    this.servLivros = servLivros
-    this.router = router
+  constructor(
+    private servEditora: ControleEditoraService,
+    private servLivros: ControleLivrosService,
+    private router: Router,
+    ) {
+    this.livro = new Livro()
   }
+
 
   incluir = () => {
-    this.livro.autores = this.autoresForm.split('\n')
-    this.servLivros.incluir(this.livro)
+    this.livro.autores = this.autoresForm.split('\n');
+    this.servLivros.incluir(this.livro);
     this.router.navigateByUrl('/lista');
-  }
-
-  ngOnInit() {
-    this.editoras = this.servEditora.getEditoras()
+  };
+  ngOnInit(): void {
+    this.editoras = this.servEditora.getEditoras();
   }
 }
+
+
