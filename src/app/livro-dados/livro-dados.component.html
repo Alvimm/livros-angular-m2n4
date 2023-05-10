@@ -31,7 +31,6 @@
         required
         [(ngModel)]="livro.codEditora"
       >
-        <option value="" disabled selected>Selecione a Editora</option>
         <option *ngFor="let editora of editoras" [value]="editora.codEditora">
           {{ editora.nome }}
         </option>
