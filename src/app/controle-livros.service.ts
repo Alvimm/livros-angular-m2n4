@@ -31,8 +31,6 @@ export class ControleLivrosService {
       autores: [
         'Erich Gamma',
         'Richard Helm',
-        'Ralph Johnson',
-        'John Vlissides',
       ],
     },
     {

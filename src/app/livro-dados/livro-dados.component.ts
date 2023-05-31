@@ -30,6 +30,7 @@ export class LivroDadosComponent implements OnInit {
   };
   ngOnInit(): void {
     this.editoras = this.servEditora.getEditoras();
+    this.livro.codEditora = this.editoras[0].codEditora.toString()
   }
 }
 

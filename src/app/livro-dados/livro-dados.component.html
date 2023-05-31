@@ -1,5 +1,5 @@
 <main class="container">
-  <h1 class="my-3">Cadastro do Livro</h1>
+  <h1 class="my-3 display-2 text-center">Cadastro do Livro</h1>
   <form (submit)="incluir()" ngNativeValidate>
     <div class="form-group">
       <label for="titulo" class="form-label"> Título </label>
@@ -7,7 +7,7 @@
         id="titulo"
         type="text"
         name="titulo"
-        class="form-control"
+        class="form-control bg-dark text-light"
         [(ngModel)]="livro.titulo"
         required
       />
@@ -17,7 +17,7 @@
       <textarea
         id="resumo"
         name="resumo"
-        class="form-control"
+        class="form-control bg-dark text-light"
         [(ngModel)]="livro.resumo"
         required
       ></textarea>
@@ -25,7 +25,7 @@
     <div class="form-group">
       <label for="editora" class="form-label mt-3">Editora</label>
       <select
-        class="form-select"
+        class="form-select bg-dark text-light"
         id="editora"
         name="editora"
         required
@@ -41,14 +41,14 @@
         Autores (1 por linha)
       </label>
       <textarea
-        class="form-control"
+        class="form-control bg-dark text-light"
         id="autores"
         name="autores"
         [(ngModel)]="autoresForm"
       ></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary px-3 mt-3">
+    <button type="submit" class="btn btn-outline-light px-3 mt-3">
       Salvar Dados
     </button>
   </form>
