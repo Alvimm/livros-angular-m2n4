@@ -2,8 +2,3 @@
 * {
   font-family: "Ubuntu", sans-serif;
 }
-body {
-  min-height: 100vh;
-  height: 100%;
-  overflow: auto;
-}

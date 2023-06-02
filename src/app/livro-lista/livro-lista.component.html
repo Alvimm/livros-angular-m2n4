@@ -1,8 +1,8 @@
 <main class="container ">
   <h1 class="my-3 display-2 text-center">Catálogo de Livros</h1>
-  <table class="table table-hover table-bordered table-rounded">
+  <table class="table table-hover table-rounded">
     <thead>
-      <tr class="table-light">
+      <tr>
         <th>Título</th>
         <th>Resumo</th>
         <th>Editora</th>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-dark" *ngFor="let livro of livros">
+      <tr class="table-danger" *ngFor="let livro of livros">
         <td>
           <p>
             {{ livro.titulo }}
